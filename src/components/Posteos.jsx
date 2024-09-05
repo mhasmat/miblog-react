@@ -36,18 +36,19 @@ const Posteos = () => {
             "usuario": "stan_lee"
         },
     ];
-
+    
   return (
     <div>
         <h2>Posteos</h2>      
         {
             data.map((post) => (
                 <div key={post.id}>
+                    <h3>{post.titulo}</h3>
                     <p>{post.texto}</p>
                     <div>
-                        <button>Leer</button>
+                        <button onClick={() => alert(`LEER post ID ${post.id}`)}>Leer</button>
                         {" "}
-                        <button>Modificar</button>
+                        <button onClick={() => alert(`MODIFICAR post ID ${post.id}`)}>Modificar</button>
                     </div>       
                 </div>
             ))
