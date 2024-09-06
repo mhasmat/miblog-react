@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const Posteos = () => {
     const data = [
         {
@@ -36,7 +38,33 @@ const Posteos = () => {
             "usuario": "stan_lee"
         },
     ];
+
+    const [ posteo, setPosteo ] = useState(data)
     
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+        const obj = {
+            id: e.target.id.value,
+            titulo: e.target.titulo.value,
+            texto: e.target.texto.value,
+            user_id: e.target.user_id.value,
+            usuario: e.target.usuario.value,
+        }
+
+        // data.push(obj);
+        const nuevoPost = [...posteo, obj];
+        setPosteo(nuevoPost);
+           
+        // e.target.id.value = "";
+        // e.target.titulo.value = "";
+        // e.target.texto.value = "";
+        // e.target.user_id.value = "";
+        // e.target.usuario.value = "";
+        
+    }
+    
+        
   return (
     <div>
         <h2>Posteos</h2>      
@@ -52,7 +80,24 @@ const Posteos = () => {
                     </div>       
                 </div>
             ))
-        }     
+        }
+        
+        <form onSubmit={handleSubmit}>
+            <label htmlFor="user_id">ID Usuario:</label> 
+            <input type="number" id="user_id" name="user_id"></input>
+            <label htmlFor="usuario">Usuario:</label> 
+            <input type="text" id="usuario" name="usuario"></input>
+
+            <label htmlFor="id">ID:</label> 
+            <input type="number" id="id" name="id"></input>
+            <label htmlFor="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo"></input>
+
+            <label htmlFor="texto">Posteo:</label>
+            <textarea name="texto" id="texto" cols="30" rows="10"></textarea>
+                     
+            <input type="submit" value="Enviar Posteo" />
+        </form>     
     </div>
   )
 }
