@@ -1,4 +1,4 @@
-[
+export const data = [
     {
         "id": 12,
         "titulo": "Spiderman",
