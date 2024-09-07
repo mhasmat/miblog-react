@@ -11,7 +11,7 @@ const Navbar = () => {
                     <NavLink to={'/posteos'} className={({isActive}) => (isActive ? "active" : "")}> Posteos</NavLink>
                 </li>
                 <li>
-                    <NavLink to={'/crear'} className={({isActive}) => (isActive ? "active" : "")}> Crear</NavLink>
+                    <NavLink to={'/crear'} className={({isActive}) => (isActive ? "active" : "")}> Crear Posteos</NavLink>
                 </li>             
             </ul>
         </nav>
