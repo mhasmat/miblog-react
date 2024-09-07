@@ -1,13 +1,13 @@
 import './App.css'
-import Posteos from './components/Posteos'
+import RouterPrincipal from './routes/RouterPrincipal'
 
 function App() {
   
 
   return (
     <>
-      <h1>Mi Blog React</h1>
-      <Posteos />
+      <RouterPrincipal />
+      {/* <Posteos /> */}
       
     </>
   )
