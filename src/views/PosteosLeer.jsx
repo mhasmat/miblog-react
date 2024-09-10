@@ -1,15 +1,12 @@
 import { useParams } from "react-router-dom";
-import Posteos from "./Posteos";
 
 const PosteosLeer = () => {
     const { id = "no-encontrado"} = useParams();
-    
+    console.log('Post n°', id)
 
   return (
     <div>
-        <h2>{`Post ${id}`}</h2>
-        <Posteos content={id} />    
-
+        <h2>{`Post n°${id}`}</h2>
     </div>
   )
 }

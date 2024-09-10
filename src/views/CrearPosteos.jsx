@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
-// import { data } from '../data.js';
+import { data } from '../data.js';
 
 const CrearPosteos = () => {
-    const [ posteos, setPosteos ] = useState({});
+    const [ posteos, setPosteos ] = useState(data);
     const form = useRef();
 
     const handleSubmit = (e) => {
@@ -16,6 +16,7 @@ const CrearPosteos = () => {
             usuario: e.target.usuario.value,
         }
         setPosteos([...posteos, obj]);
+        console.log(posteos);
         form.current.reset();    
     };    
 

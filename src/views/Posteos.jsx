@@ -12,8 +12,7 @@ const Posteos = () => {
                     <div key={post.id} className="card-post">
                         <h3><li>{post.titulo}</li></h3>
                         <p>{post.texto}</p>                
-                        <button onClick={() => {
-                            console.log(post.id)
+                        <button onClick={() => {   
                             navigate(`/posteos/${post.id}/`)
                         }}>Leer</button>
                         {" "}
